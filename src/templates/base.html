@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <!-- bg ffffeo -->
+  <body style="background-color: #fffff6; font-family: sans-serif">
+    <header style="display: flex; justify-content: center; padding-top: 16px">
+      <div style="width: 90%">
+        <span
+          style="
+            text-align: center;
+            font-size: 20px;
+            color: #6e6e6e;
+            font-weight: 600;
+          "
+          >MarketMind</span
+        >
+      </div>
+    </header>
+    <main style="display: flex; height: 80vh">
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block content %}
+<div
+  style="
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+  "
+>
+  <h1 style="text-align: center; font-size: 24px; color: #6e6e6e">
+    What company are you interested in?
+  </h1>
+
+  <form
+    method="POST"
+    style="
+      background-color: #fffff6;
+      border-radius: 16px;
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      padding-block: 8px;
+      padding-inline: 16px;
+      margin-inline: auto;
+    "
+  >
+    {% csrf_token %}
+    <input
+      type="text"
+      name="query"
+      placeholder="Enter the company name..."
+      maxlength="10"
+      style="
+        background-color: #fffff6;
+        border-radius: 16px;
+        gap: 4px;
+        justify-content: center;
+        padding-block: 8px;
+        padding-inline: 16px;
+        width: fit-content;
+        border: solid 0.1px #a7a7a7;
+        margin-inline: auto;
+      "
+    />
+    <button
+      type="submit"
+      style="
+        background-color: #a7a7a7;
+        border-radius: 16px;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        padding-block: 8px;
+        padding-inline: 16px;
+        margin-inline: auto;
+        color: white;
+        border: none;
+      "
+    >
+      Search
+    </button>
+  </form>
+
+  {% if result %}
+  <p style="color: #6e6e6e">{{ result }}</p>
+  {% endif %}
+</div>
+{% endblock %}
